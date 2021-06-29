@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+## 🔥 FireHydrant Frontend Code Challenge 🔥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### The Challenge
 
-## Available Scripts
+The end goal for this challenge is for you to use the data provided by the `json-server` to display a list of products with it's associated user via the `created_by_id` field and the `/users` api end point. The UI choices are up to you.
 
-In the project directory, you can run:
+A few examples include but not limited to:
 
-### `yarn start`
+- filter by active products
+- filter by colors
+- search by product name
+- paginate the products list
+- add the ability to create a new product or delete one
+- show all products given a certain user
+- add tests around your code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We ask that you spend no more than an hour or so working on this - it does not need to be polished or production-ready. We just want to hear about it and be able to ask questions about decisions made and thought processes. Our only parameter is that we'd like it to be in JS.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Setup
 
-### `yarn test`
+In order to setup this repo you will first need to clone it locally and then change into the `frontend-challenge` and run `yarn install`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/firehydrant/frontend-challenge
+cd frontend-challenge
+yarn install
+```
 
-### `yarn build`
+### Starting the Server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This repo is setup to run both an instance of `create-react-app` as well as a local `json-server` using the `yarn dev` command.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+yarn dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Create React App Info
 
-### `yarn eject`
+This is a bare bones setup. Feel free to use libraries you would like to add.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### JSON Server Info
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you would like to look at your options for querying the server for pagination, filtering and such you can view the documentation https://github.com/typicode/json-server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The current server holds data for three different data types listed below and runs on `http://localhost:3001`. This server uses faker behind the scenes to generate the data on each boot up.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+// /products
+// returns an Array[] of products
 
-## Learn More
+{
+  "id": 1,
+  "name": "Incredible Granite Mouse",
+  "created_at": "2055-10-10T06:44:45.088Z",
+  "summary": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+  "color": "tan",
+  "active": false,
+  "created_by_id": 85
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+// /users
+// returns an Array[] of users
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+{
+  "id": 1,
+  "name": "Sergio Lueilwitz",
+  "email": "Alek_Okuneva76@yahoo.com",
+  "avatar": "https://cdn.fakercloud.com/avatars/Chakintosh_128.jpg"
+}
+```
 
-### Code Splitting
+```
+// /colors
+// returns an Array[] of colors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+{
+  "id": 1,
+  "name": "tan"
+}
+```
