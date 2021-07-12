@@ -4,6 +4,7 @@ import { createBrowserHistory } from 'history';
 import reducer from './genericReducer';
 import Products from './Products';
 import UserProfile from './UserProfile';
+import './App.css';
 
 const history = createBrowserHistory();
 

@@ -65,8 +65,7 @@ const Products = ({ userId, users }) => {
 
   if (status === 'fulfilled') {
     return <React.Fragment>
-      {!userId && <div>Page {pageId} of {totalItems / 25}</div>}
-      {!userId && <ul>
+      {!userId && <ul className='nav-bar'>
         {Number(pageId) !== 1 && <li><Link to='/products/1'>First Page</Link></li>}
         {Number(pageId) > 1 && <li><Link to={getPreviousRoute()}>Previous Page</Link></li>}
         {Number(pageId) !== (totalItems / 25) && <React.Fragment>
@@ -74,8 +73,9 @@ const Products = ({ userId, users }) => {
           <li><Link to={`/products/${totalItems / 25}`}>Last Page</Link></li>
           </React.Fragment>}
       </ul>}
-      <h2>Products</h2>
-      <ul>
+      <h2 className='center'>Products</h2>
+      {!userId && <div className='center'>Page {pageId} of {totalItems / 25}</div>}
+      <ul className='products'>
         {products.map((product) => <Product key={product.id} {...product} />)}
       </ul>
     </React.Fragment>

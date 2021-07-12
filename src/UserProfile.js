@@ -9,7 +9,7 @@ const UserProfile = ({ users }) => {
   
   return <React.Fragment>
     <button onClick={history.goBack}>Go Back</button>
-    <h1>{currentUser.name}'s Page</h1>
+    <h1 className='center'>{currentUser.name}'s Page</h1>
     <Products userId={userId} users={users} />
   </React.Fragment>
 }

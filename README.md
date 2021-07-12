@@ -1,4 +1,4 @@
-## 🔥 FireHydrant Frontend Code Challenge 🔥
+## REDACTED Frontend Code Challenge
 
 ### The Challenge
 
